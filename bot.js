@@ -41,7 +41,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 	//Prefix
     if (message.substring(0, 1) == '$') {
 		//Search
-		if(message.substring(1,2) == 'S' || message.substring(1,2) == 's')
+		if(message.substring(1,6) == 'Search' || message.substring(1,6) == 'search')
 		{
 			var args = message.substring(8);
 			console.log(args)
@@ -68,7 +68,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			})
 		}
 		//Image
-		else if(message.substring(1,2) == 'I' || message.substring(1,2) == 'i')
+		else if(message.substring(1,5) == 'Image' || message.substring(1,5) == 'image')
 		{
 			var args = message.substring(7);
 			console.log(args)
@@ -95,8 +95,31 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 						message: message.substring(16)
 					});
 		}
+		//change bot nickname
+		else if(message.toLowerCase().includes('$self-nick')){
+			console.log(userID);
+			console.log(SID);
+			bot.editNickname({
+				serverID: SID,
+				userID: userID, 
+				nick: message.replace('$self-nick ', '')
+			},function(err){
+				console.log(err)
+			});
+		}
+		else if(message.toLowerCase().includes('$nick')){
+			console.log(userID);
+			console.log(SID);
+			bot.editNickname({
+				serverID: SID,
+				userID: bot.id, 
+				nick: message.replace('$nick ', '')
+			},function(err){
+				console.log(err)
+			});
+		}
 		//Not a command
-		else{
+		else if(userID != bot.id){
 
 			bot.sendMessage({
 						to:channelID,
@@ -121,17 +144,4 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			});
 	}
 	
-	//change bot nickname
-	if(message.toLowerCase().includes('nick')){
-		console.log(userID);
-		console.log(SID);
-		bot.editNickname({
-			serverID: SID,
-			userID: bot.id, 
-			nick: message.replace('nick ', '')
-		},function(err){
-			console.log(err)
-		});
-	}
-
 });
