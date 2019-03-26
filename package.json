@@ -1,0 +1,14 @@
+{
+  "name": "greeter-bot",
+  "version": "1.0.0",
+  "description": "My own Discord bot",
+  "main": "bot.js",
+  "author": "YOUR-NAME-HERE",
+  "dependencies": {
+    "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+    "mtgsdk": "^0.4.2",
+    "scryfall-client": "^0.8.2",
+    "scryfall-sdk": "^1.5.0",
+    "winston": "^3.2.1"
+  }
+}
