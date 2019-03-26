@@ -89,4 +89,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 	
 		
 	}
-});
+
+//testing includes()
+	if (message.includes("magic bot"){
+		bot.sendMessage({to:channelID, message: "owo"});
+	}
+};
