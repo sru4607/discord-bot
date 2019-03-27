@@ -1,4 +1,4 @@
-
+```
                                                                                         
      ##### /    ##                                      ##### ##                        
   ######  /  #####                                   ######  /##                        
@@ -31,4 +31,4 @@ $self-nick (nickname) // grant you a nickname
 $nick (nickname) // grant myself a nickname
 
 There is only one rule on any server I am on,
-you must never mention my brothers name
+you must never mention my brothers name```
