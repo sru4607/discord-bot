@@ -1,0 +1,34 @@
+
+                                                                                        
+     ##### /    ##                                      ##### ##                        
+  ######  /  #####                                   ######  /##                        
+ /#   /  /     #####                                /#   /  / ##                  #     
+/    /  ##     # ##                                /    /  /  ##                 ##     
+    /  ###     #                                       /  /   /                  ##     
+   ##   ##     # ###  /###     ######      /###       ## ##  /        /###     ######## 
+   ##   ##     #  ###/ #### / /#######    / ###  /    ## ## /        / ###  / ########  
+   ##   ##     #   ##   ###/ /      ##   /   ###/     ## ##/        /   ###/     ##     
+   ##   ##     #   ##               /   ##    ##      ## ## ###    ##    ##      ##     
+   ##   ##     #   ##              /    ##    ##      ## ##   ###  ##    ##      ##     
+    ##  ##     #   ##             ###   ##    ##      #  ##     ## ##    ##      ##     
+     ## #      #   ##              ###  ##    ##         /      ## ##    ##      ##     
+      ###      /   ##               ### ##    /#     /##/     ###  ##    ##      ##     
+       #######/    ###               ##  ####/ ##   /  ########     ######       ##     
+         ####       ###              ##   ###   ## /     ####        ####         ##    
+                                     /             #                                    
+                                    /               ##                                  
+                                   /                                                    
+                                  /                                                     
+                                     
+Greetings, I am the planeswalker Urza. I serve to bring
+information concerning the many Magic the Gathering Spells
+Currently, you may use me to
+
+$Search (card) // Search through Scryfall for a card
+$Image (card) // Display a picture of the card
+$Info (card) // Display card info
+$self-nick (nickname) // grant you a nickname
+$nick (nickname) // grant myself a nickname
+
+There is only one rule on any server I am on,
+you must never mention my brothers name
