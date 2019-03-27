@@ -150,7 +150,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 		
 	}
 	//testing includes()
-	if (message.toLowerCase().includes("magic bot")){
+	if (message.toLowerCase().includes(bot.id)){
 		bot.sendMessage({
 			to:channelID, 
 			message: "owo"
