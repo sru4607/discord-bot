@@ -12,7 +12,15 @@ fs.readFile('Kilroy.txt', (err, data) => {
     secret = data.toString();
 	console.log(secret)
 }) 
- 
+
+var help;
+fs.readFile('Urza.txt', (err,data) => {
+	if(err) trow err;
+	help = date.toString();
+		console.log(help)
+
+})
+
 var callback = function(){
 	
 }
@@ -105,6 +113,13 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 						to:channelID,
 						message: args + " is not a valid card name"
 					});
+			})
+		}
+	    	//help command
+	        else if (message.substring(1,5).toLowerCase() == "help"){
+			bot.sendMessage({
+				to:channelID,
+				message: "```" + help + "```"
 			})
 		}
 		//repeat after me
