@@ -34,6 +34,7 @@ bot.on('ready', function (evt) {
 	
 });
 bot.on('message', function (user, userID, channelID, message, evt) {
+	if(userID != bot.id){
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `$`
 	//Server ID
@@ -139,7 +140,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			});
 		}
 		//Not a command
-		else if(userID != bot.id){
+		else{
 			console.log(message.substring(1,4))
 			bot.sendMessage({
 						to:channelID,
@@ -150,10 +151,28 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 		
 	}
 	//testing includes()
-	if (message.toLowerCase().includes(bot.id)){
+	if (message.toLowerCase().includes(bot.servers[bot.channels[channelID].guild_id].members[bot.id].nick.toLowerCase())){
 		bot.sendMessage({
 			to:channelID, 
 			message: "owo"
+			});
+	}
+	if (bot.servers[bot.channels[channelID].guild_id].members[bot.id].nick.toLowerCase().includes("urza") && message.toLowerCase().includes("mishra")){
+		if(bot.servers[bot.channels[channelID].guild_id].members[userID].nick != null){
+		bot.sendMessage({
+			to:channelID, 
+			message: "Begone " + bot.servers[bot.channels[channelID].guild_id].members[userID].nick
+			});
+		}
+		else{
+			bot.sendMessage({
+			to:channelID, 
+			message: "Begone Loser" 
+			});
+		}
+		bot.kick({
+			serverID:SID, 
+			userID: userID
 			});
 	}
 	//Author Message
@@ -163,5 +182,5 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			message: "```" + secret + "```"
 			});
 	}
-	
+	}
 });
