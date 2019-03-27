@@ -41,7 +41,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 	//Prefix
     if (message.substring(0, 1) == '$') {
 		//Search
-		if(message.substring(1,6) == 'Search' || message.substring(1,6) == 'search')
+		if(message.substring(1,7) == 'Search' || message.substring(1,7) == 'search')
 		{
 			var args = message.substring(8);
 			console.log(args)
@@ -68,7 +68,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			})
 		}
 		//Image
-		else if(message.substring(1,5) == 'Image' || message.substring(1,5) == 'image')
+		else if(message.substring(1,6) == 'Image' || message.substring(1,6) == 'image')
 		{
 			var args = message.substring(7);
 			console.log(args)
@@ -80,6 +80,26 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 						message: imgs
 					});
 			}).catch(function(err) {
+				bot.sendMessage({
+						to:channelID,
+						message: args + " is not a valid card name"
+					});
+			})
+		}
+		//Info
+		else if(message.substring(1,5) == 'Info' || message.substring(1,5) == 'info')
+		{
+			var args = message.substring(6);
+			console.log(args)
+			scryfall.get('cards/named', {
+			exact: args}).then(function(card){
+					var info = "Images: "+card.image_uris.png+"\nName: " + card.name +"\nColors: " + card.colors + "\nMana Cost: "+ card.mana_cost +"\nCMC: " + card.cmc + "\nPower/Toughness: " + card.power+"/"+card.toughness + "\nCurrent Price: " + card.prices.usd
+					bot.sendMessage({
+						to:channelID,
+						message: info
+					});
+			}).catch(function(err) {
+				console.log(err)
 				bot.sendMessage({
 						to:channelID,
 						message: args + " is not a valid card name"
@@ -120,7 +140,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 		}
 		//Not a command
 		else if(userID != bot.id){
-
+			console.log(message.substring(1,4))
 			bot.sendMessage({
 						to:channelID,
 						message: message + " is not a valid command"
